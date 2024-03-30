@@ -1,0 +1,7 @@
+client/.env
+client/node_modules
+client/dist
+server/build-zip-commands.txt
+server/myFunction.zip
+server/tests.http
+**/bootstrap
