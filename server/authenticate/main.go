@@ -52,11 +52,6 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (events
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		// Headers: map[string]string{
-		// 	"Access-Control-Allow-Headers": "content-type,x-amz-date,authorization,x-api-key,x-amz-security-token",
-		// 	"Access-Control-Allow-Methods": "*",
-		// 	"Access-Control-Allow-Origin": "*",
-		// },
 		Body: string(jbytes),
 	}, nil
 
