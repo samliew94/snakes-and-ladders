@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"log"
+	"os"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -94,7 +95,7 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (events
 			ConnectionId: aws.String(playerConnectionID),
 			Data: data,
 		}, func(o *apigatewaymanagementapi.Options) {
-			o.BaseEndpoint = aws.String("https://6mr0m656c6.execute-api.ap-southeast-1.amazonaws.com/dev")
+			o.BaseEndpoint = aws.String(os.Getenv("WSS_POST_ENDPOINT"))
 		})
 
 		if err != nil {

@@ -82,7 +82,7 @@ func handler(ctx context.Context, request events.APIGatewayWebsocketProxyRequest
 
 	// disconnect the invalid connection ids (if err is ok)
 	api := apigatewaymanagementapi.NewFromConfig(cfg, func(o *apigatewaymanagementapi.Options) {
-		o.BaseEndpoint = aws.String("https://6mr0m656c6.execute-api.ap-southeast-1.amazonaws.com/dev")
+		o.BaseEndpoint = aws.String(os.Getenv("WSS_POST_ENDPOINT"))
 	})
 
 	for _, connectionId := range invalidConnectionIds {
